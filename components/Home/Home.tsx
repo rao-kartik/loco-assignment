@@ -157,6 +157,7 @@ const Home = (props: IHome) => {
 			refetchTries?.current?.[pageDetails.page] > 3 // allowning 3 retries if api fails
 		) {
 
+      // resetting refetch tries
 			if (refetchTries?.current?.[pageDetails.page] > 3) {
 				refetchTries.current = {
 					...refetchTries.current,
