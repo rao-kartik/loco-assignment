@@ -19,7 +19,6 @@ const Lightbox = (props: ILightbox) => {
 
   return (
     open &&
-    currentImageData?.urls?.full &&
     createPortal(
       <div className="fixed top-0 left-0 w-screen h-screen z-50 flex items-center justify-center">
         <div
@@ -61,10 +60,10 @@ const Lightbox = (props: ILightbox) => {
                 <NextArrowIcon className="size-3 text-[#ffffff]" />
               </button>
 
-              <img
+              {currentImageData.urls?.full && <img
                 className="size-full object-contain"
                 src={currentImageData.urls?.full}
-              />
+              />}
 
               <button
                 className="absolute top-1/2 right-4 md:right-6 -translate-y-1/2 bg-[#c0c0c0] rounded-full p-2"
